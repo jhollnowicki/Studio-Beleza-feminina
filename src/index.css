@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Beleza Feminina - Luxury Beauty Studio Design System
+All colors MUST be HSL for consistency and theme support.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 4.3%; /* Deep black #0B0B0B */
+    --foreground: 0 0% 96.1%; /* Soft white #F5F5F7 */
+
+    /* Luxury Gold Gradient */
+    --primary: 36 87% 55.3%; /* Golden orange #F5A623 */
+    --primary-light: 43 89% 73.1%; /* Light gold #F8D27A */
+    --primary-foreground: 0 0% 4.3%; /* Black text on gold */
+    
+    /* Elegant Grays */
+    --secondary: 0 0% 16.5%; /* Dark gray #2A2A2A */
+    --secondary-foreground: 0 0% 96.1%;
+    
+    --muted: 0 0% 12%; /* Slightly lighter than background */
+    --muted-foreground: 0 0% 72.2%; /* Light gray #B8B8B8 */
+    
+    /* Interactive Elements */
+    --accent: 36 87% 55.3%; /* Same as primary */
+    --accent-foreground: 0 0% 4.3%;
+    
+    /* Functional Colors */
+    --card: 0 0% 6%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 96.1%;
+    
+    --popover: 0 0% 4.3%;
+    --popover-foreground: 0 0% 96.1%;
+    
+    --border: 0 0% 16.5%; /* Subtle borders */
+    --input: 0 0% 10%; /* Input backgrounds */
+    --ring: 36 87% 55.3%; /* Focus rings in gold */
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 96.1%;
+    
+    /* Radius */
+    --radius: 0.75rem; /* More luxurious rounded corners */
+    
+    /* Luxury Effects */
+    --glow-primary: 36 87% 55.3% / 0.3; /* Gold glow effect */
+    --glow-subtle: 0 0% 100% / 0.1; /* Subtle white glow */
+    --blur-glass: blur(12px); /* Glassmorphism effect */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(90deg, hsl(36 87% 55.3%) 0%, hsl(43 89% 73.1%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(0 0% 10%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4.3%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 4.3%) 100%);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--glow-primary)), 0 0 60px hsl(var(--glow-primary));
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.8), 0 0 30px hsl(var(--glow-subtle));
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.5), 0 0 20px hsl(var(--glow-subtle));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  
+  /* Luxury Typography */
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+    font-feature-settings: 'lnum' 1, 'pnum' 1;
+  }
+  
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-primary);
+  }
+}
+
+@layer components {
+  /* Luxury Glass Effect */
+  .glass {
+    backdrop-filter: var(--blur-glass);
+    background: hsl(0 0% 6% / 0.8);
+    border: 1px solid hsl(0 0% 20% / 0.3);
+  }
+  
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-hover:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+    transition: var(--transition-smooth);
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Luxury Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  /* Parallax Container */
+  .parallax {
+    transform-style: preserve-3d;
+  }
+  
+  .parallax-layer {
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--glow-primary));
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--glow-primary));
+    }
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
