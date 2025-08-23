@@ -8,8 +8,9 @@ import { Star, Users, Award, Sparkles, Heart } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import SEO from '@/components/SEO';
 import heroBackground from '@/assets/hero-bg.jpg';
-import facialTreatment from '@/assets/facial-treatment.jpg';
-import hairTreatment from '@/assets/hair-treatment.jpg';
+import limpeza from '@/assets/limpeza 2.png';
+import hairTreatment from '@/assets/hidratação.png';
+import sobramcelha from '@/assets/desing-sombrancelha.png';
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ Horário: ${formData.hora || 'A definir'}
 ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
 
     window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(message)}`, '_blank');
-    
+
     toast({
       title: "Redirecionando para WhatsApp",
       description: "Você será direcionado para nosso WhatsApp com os dados preenchidos.",
@@ -76,7 +77,7 @@ ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
       rating: 5,
     },
     {
-      name: "Carla Santos", 
+      name: "Carla Santos",
       text: "Melhor experiência em tratamento estético que já tive!",
       rating: 5,
     },
@@ -87,7 +88,7 @@ ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
       <SEO />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url(${heroBackground})` }}
         ></div>
@@ -103,9 +104,9 @@ ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
             Tratamentos premium de estética facial e corporal em um espaço pensado para você
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="luxury" 
-              size="lg" 
+            <Button
+              variant="luxury"
+              size="lg"
               onClick={() => window.open('https://wa.me/5541999999999?text=Olá, gostaria de agendar um horário.', '_blank')}
             >
               Agendar no WhatsApp
@@ -157,31 +158,36 @@ ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
                 description: "Purificação profunda com protocolo profissional para brilho e maciez imediata",
                 duration: "60-90min",
                 price: "A partir de R$ 150",
-                image: facialTreatment
+                image: limpeza,
+                objectPosition: "50% 60%"
               },
               {
                 title: "Design de Sobrancelhas",
                 description: "Modelagem personalizada para valorizar seu olhar",
                 duration: "45min",
                 price: "A partir de R$ 80",
-                image: null
+                image: sobramcelha,
+                objectPosition: "50% 0%"
               },
               {
                 title: "Hidratação Capilar",
                 description: "Nutrição profunda com brilho espelhado e maciez duradoura",
                 duration: "60min",
                 price: "A partir de R$ 120",
-                image: hairTreatment
+                image: hairTreatment,
+                objectPosition: "50% 10%"
               },
             ].map((service, index) => (
               <Card key={index} className="glass glow-hover group transition-all duration-300">
                 <div className="aspect-video bg-gradient-subtle rounded-t-lg overflow-hidden">
                   {service.image ? (
-                    <img 
-                      src={service.image} 
+                    <img
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      style={{ objectPosition: service.objectPosition || "50% 50%" }}
                     />
+
                   ) : (
                     <div className="w-full h-full bg-gradient-subtle"></div>
                   )}

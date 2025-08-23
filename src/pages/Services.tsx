@@ -5,6 +5,22 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, Star } from 'lucide-react';
 import SEO from '@/components/SEO';
 
+import ceraImg from '@/assets/cera.png';
+import daySpaImg from '@/assets/day spa.png';
+import sobrancelhaImg from '@/assets/desing-sombrancelha.png';
+import escovaImg from '@/assets/escova.png';
+import limpezaImg from '@/assets/limpeza.png';
+import limpeza2Img from '@/assets/limpeza-2.png'; // caso queira variação
+import hairTreatment from '@/assets/hidratação.png';
+import makeNoivaImg from '@/assets/make-noiva.png';
+import makeSocialImg from '@/assets/make-social.png';
+import maoImg from '@/assets/mao.png';
+import pesImg from '@/assets/pes.png';
+import peelingImg from '@/assets/peeling.png';
+import skinGlowImg from '@/assets/skinGlow.png';
+import heroBg from '@/assets/hero-bg.png';
+
+
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState('facial');
 
@@ -24,21 +40,26 @@ const Services = () => {
         description: "Purificação profunda com protocolo profissional para brilho e maciez imediata. Inclui análise de pele, extração, máscara personalizada e protetor solar.",
         duration: "60-90min",
         price: "A partir de R$ 150",
-        benefits: ["Remoção de cravos", "Hidratação profunda", "Proteção solar", "Análise completa"]
+        benefits: ["Remoção de cravos", "Hidratação profunda", "Proteção solar", "Análise completa"],
+        image: limpezaImg,
+        objectPosition: "50% 60%" // puxa um pouco pra baixo
       },
       {
         name: "Skin Glow",
         description: "Hidratação intensiva e viço instantâneo para eventos especiais. Tratamento que proporciona brilho natural e pele radiante.",
         duration: "45min",
         price: "A partir de R$ 120",
-        benefits: ["Hidratação intensa", "Brilho natural", "Efeito imediato", "Antioxidantes"]
+        benefits: ["Hidratação intensa", "Brilho natural", "Efeito imediato", "Antioxidantes"],
+        image: skinGlowImg
       },
       {
         name: "Peeling Químico",
         description: "Renovação celular para uma pele mais lisa e uniforme. Ideal para manchas, cicatrizes e sinais do tempo.",
         duration: "60min",
         price: "A partir de R$ 200",
-        benefits: ["Renovação celular", "Uniformização", "Redução de manchas", "Anti-idade"]
+        benefits: ["Renovação celular", "Uniformização", "Redução de manchas", "Anti-idade"],
+        image: peelingImg,
+        objectPosition: "50% 70%"
       }
     ],
     cabelo: [
@@ -47,14 +68,18 @@ const Services = () => {
         description: "Nutrição profunda com produtos premium para cabelos secos e danificados. Resultado com brilho espelhado e maciez incomparável.",
         duration: "60min",
         price: "A partir de R$ 120",
-        benefits: ["Nutrição profunda", "Brilho intenso", "Maciez duradoura", "Reparação"]
+        benefits: ["Nutrição profunda", "Brilho intenso", "Maciez duradoura", "Reparação"],
+        image: hairTreatment,
+        objectPosition: "50% 20%"
       },
       {
         name: "Escova Modelada",
         description: "Acabamento sofisticado e duradouro com técnicas profissionais. Perfeito para eventos ou para manter o visual impecável.",
         duration: "40min",
         price: "A partir de R$ 80",
-        benefits: ["Durabilidade", "Movimento natural", "Proteção térmica", "Brilho"]
+        benefits: ["Durabilidade", "Movimento natural", "Proteção térmica", "Brilho"],
+        image: escovaImg,
+        objectPosition: "50% 35%"
       }
     ],
     maquiagem: [
@@ -63,14 +88,18 @@ const Services = () => {
         description: "Acabamento impecável para qualquer ocasião social. Maquiagem personalizada que valoriza sua beleza natural.",
         duration: "60min",
         price: "A partir de R$ 150",
-        benefits: ["Longa duração", "Personalizada", "Produtos premium", "Retoque incluído"]
+        benefits: ["Longa duração", "Personalizada", "Produtos premium", "Retoque incluído"],
+        image:makeSocialImg,
+        objectPosition: "50% 30%"
       },
       {
         name: "Make Noiva",
         description: "Maquiagem especial para o dia mais importante, incluindo prova e acompanhamento durante o evento.",
         duration: "Pacote completo",
         price: "A partir de R$ 400",
-        benefits: ["Prova inclusa", "Acompanhamento", "Kit retoque", "Duração estendida"]
+        benefits: ["Prova inclusa", "Acompanhamento", "Kit retoque", "Duração estendida"],
+        image: makeNoivaImg,
+        objectPosition: "50% 0%"
       }
     ],
     'maos-pes': [
@@ -79,14 +108,17 @@ const Services = () => {
         description: "Esfoliação, hidratação e acabamento perfeito. Tratamento completo que deixa as mãos macias e as unhas impecáveis.",
         duration: "45min",
         price: "A partir de R$ 60",
-        benefits: ["Esfoliação", "Hidratação intensa", "Esmaltação", "Massagem"]
+        benefits: ["Esfoliação", "Hidratação intensa", "Esmaltação", "Massagem"],
+        image: maoImg,
+        objectPosition: "50% 80%"
       },
       {
         name: "Spa dos Pés",
         description: "Relaxamento e renovação completa dos pés. Inclui escalda-pés, esfoliação, hidratação e massagem relaxante.",
         duration: "60min",
         price: "A partir de R$ 80",
-        benefits: ["Escalda-pés", "Esfoliação", "Massagem relaxante", "Hidratação"]
+        benefits: ["Escalda-pés", "Esfoliação", "Massagem relaxante", "Hidratação"],
+        image:pesImg
       }
     ],
     depilacao: [
@@ -95,7 +127,8 @@ const Services = () => {
         description: "Técnica suave e eficiente com cera de alta qualidade. Menor dor e resultado duradouro com cuidados pós-depilação.",
         duration: "Varia por região",
         price: "A partir de R$ 25",
-        benefits: ["Menos dor", "Durabilidade", "Pele macia", "Cuidados inclusos"]
+        benefits: ["Menos dor", "Durabilidade", "Pele macia", "Cuidados inclusos"],
+        image:ceraImg
       }
     ],
     'day-spa': [
@@ -104,7 +137,8 @@ const Services = () => {
         description: "Combo personalizado com tratamentos faciais, corporais e relaxamento. Uma experiência completa de bem-estar.",
         duration: "3-4 horas",
         price: "A partir de R$ 350",
-        benefits: ["Múltiplos tratamentos", "Relaxamento total", "Lanche incluso", "Ambiente exclusivo"]
+        benefits: ["Múltiplos tratamentos", "Relaxamento total", "Lanche incluso", "Ambiente exclusivo"],
+        image: daySpaImg
       }
     ]
   };
@@ -116,7 +150,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-12">
-      <SEO 
+      <SEO
         title="Serviços de Beleza Premium - Beleza Feminina Curitiba"
         description="Conheça nossos tratamentos de beleza: estética facial, capilar, maquiagem, mãos & pés, depilação e day spa. Agende seu horário."
       />
@@ -149,8 +183,21 @@ const Services = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services[activeCategory as keyof typeof services]?.map((service, index) => (
             <Card key={index} className="glass glow-hover group transition-all duration-300 hover:scale-105">
-              <div className="aspect-video bg-gradient-subtle rounded-t-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
+              <div className="aspect-video rounded-t-lg relative overflow-hidden">
+                {service.image ? (
+                  <img
+                    src={service.image as string}
+                    alt={service.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    style={{ objectPosition: (service as any).objectPosition || "50% 50%" }}
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-subtle" />
+                )}
+
+                {/* overlay suave opcional */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="glass">
                     <Clock className="w-3 h-3 mr-1" />
@@ -158,6 +205,7 @@ const Services = () => {
                   </Badge>
                 </div>
               </div>
+
               <CardContent className="p-6">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
@@ -167,11 +215,11 @@ const Services = () => {
                     {service.price}
                   </span>
                 </div>
-                
+
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                   {service.description}
                 </p>
-                
+
                 <div className="mb-6">
                   <h4 className="font-medium mb-2 text-primary">Benefícios:</h4>
                   <div className="flex flex-wrap gap-1">
@@ -182,7 +230,7 @@ const Services = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <Button
                   variant="luxury"
                   className="w-full"

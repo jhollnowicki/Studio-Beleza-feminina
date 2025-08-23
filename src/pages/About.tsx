@@ -4,6 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { Heart, Star, Award, Users, Calendar, Sparkles } from 'lucide-react';
 import SEO from '@/components/SEO';
 
+import ambiente1 from '@/assets/local1.png';
+import ambiente2 from '@/assets/local2.png';
+import ambiente3 from '@/assets/local3.png';
+import ambiente4 from '@/assets/local4.png';
+
 const About = () => {
   const teamMembers = [
     {
@@ -64,7 +69,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-12">
-      <SEO 
+      <SEO
         title="Quem Somos - Beleza Feminina Estúdio de Beleza Premium"
         description="Conheça a história, equipe e valores do Beleza Feminina. Mais de 5 anos cuidando da beleza feminina em Curitiba com excelência."
       />
@@ -88,13 +93,13 @@ const About = () => {
                   <span className="text-gradient">Nosso Manifesto</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  A <strong>Beleza Feminina</strong> nasceu do desejo de entregar excelência em tratamentos estéticos, 
-                  criando um espaço onde cada mulher se sinta única e especial. Acreditamos que a verdadeira beleza 
-                  vem de dentro, e nosso papel é realçar essa beleza natural através de cuidados personalizados e 
+                  A <strong>Beleza Feminina</strong> nasceu do desejo de entregar excelência em tratamentos estéticos,
+                  criando um espaço onde cada mulher se sinta única e especial. Acreditamos que a verdadeira beleza
+                  vem de dentro, e nosso papel é realçar essa beleza natural através de cuidados personalizados e
                   técnicas de alta qualidade.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Mais que um estúdio de beleza, somos um refúgio onde você pode relaxar, cuidar de si mesma e 
+                  Mais que um estúdio de beleza, somos um refúgio onde você pode relaxar, cuidar de si mesma e
                   sair renovada. Cada detalhe foi pensado para proporcionar uma experiência única e inesquecível.
                 </p>
               </div>
@@ -195,14 +200,14 @@ const About = () => {
                 <span className="text-gradient">Nosso Ambiente</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Criamos um ambiente que combina elegância, conforto e tranquilidade. 
-                Cada detalhe foi cuidadosamente pensado para proporcionar uma experiência 
+                Criamos um ambiente que combina elegância, conforto e tranquilidade.
+                Cada detalhe foi cuidadosamente pensado para proporcionar uma experiência
                 única de relaxamento e bem-estar.
               </p>
               <ul className="space-y-3">
                 {[
                   "Ambientes climatizados e aromática",
-                  "Música ambiente relaxante", 
+                  "Música ambiente relaxante",
                   "Decoração elegante e acolhedora",
                   "Espaços privativos para cada tratamento",
                   "Área de descanso exclusiva"
@@ -215,10 +220,18 @@ const About = () => {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square bg-gradient-subtle rounded-lg"></div>
+              {[ambiente1, ambiente2, ambiente3, ambiente4].map((img, i) => (
+                <div key={i} className="aspect-square rounded-lg overflow-hidden group relative">
+                  <img
+                    src={img}
+                    alt={`Ambiente ${i + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+                </div>
               ))}
             </div>
+
           </div>
         </section>
 
