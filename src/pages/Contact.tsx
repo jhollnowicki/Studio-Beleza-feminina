@@ -76,7 +76,7 @@ Assunto: ${formData.assunto}
 
 Mensagem: ${formData.mensagem}`;
 
-    window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5541xxxxxxxxx?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const subjects = [
@@ -191,7 +191,7 @@ Mensagem: ${formData.mensagem}`;
                 <Button
                   variant="whatsapp"
                   size="lg"
-                  onClick={() => window.open('https://wa.me/5541999999999?text=Olá, gostaria de tirar uma dúvida.', '_blank')}
+                  onClick={() => window.open('https://wa.me/5541xxxxxxxxx?text=Olá, gostaria de tirar uma dúvida.', '_blank')}
                   className="w-full"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
@@ -222,10 +222,10 @@ Mensagem: ${formData.mensagem}`;
                     <div>
                       <h4 className="font-semibold mb-1">Telefone</h4>
                       <button 
-                        onClick={() => window.open('https://wa.me/5541999999999', '_blank')}
+                        onClick={() => window.open('https://wa.me/5541xxxxxxxxx', '_blank')}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        (41) 99999-9999
+                        (xx) xxxxx - xxxx
                       </button>
                     </div>
                   </div>

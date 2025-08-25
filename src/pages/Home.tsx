@@ -46,7 +46,7 @@ Data: ${formData.data || 'A definir'}
 Horário: ${formData.hora || 'A definir'}
 ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
 
-    window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5541xxxxxxxx?text=${encodeURIComponent(message)}`, '_blank');
 
     toast({
       title: "Redirecionando para WhatsApp",
@@ -107,7 +107,7 @@ ${formData.observacoes ? `Observações: ${formData.observacoes}` : ''}`;
             <Button
               variant="luxury"
               size="lg"
-              onClick={() => window.open('https://wa.me/5541999999999?text=Olá, gostaria de agendar um horário.', '_blank')}
+              onClick={() => window.open('https://wa.me/5541xxxxxxxx?text=Olá, gostaria de agendar um horário.', '_blank')}
             >
               Agendar no WhatsApp
             </Button>

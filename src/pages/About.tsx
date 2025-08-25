@@ -267,7 +267,7 @@ const About = () => {
               <Button
                 variant="luxury"
                 size="lg"
-                onClick={() => window.open('https://wa.me/5541999999999?text=Olá, gostaria de conhecer o estúdio e agendar uma visita.', '_blank')}
+                onClick={() => window.open('https://wa.me/5541xxxxxxxxx?text=Olá, gostaria de conhecer o estúdio e agendar uma visita.', '_blank')}
               >
                 Agendar uma visita
               </Button>

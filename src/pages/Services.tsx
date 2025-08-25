@@ -145,7 +145,7 @@ const Services = () => {
 
   const handleBookService = (serviceName: string) => {
     const message = `Olá! Gostaria de agendar o serviço: ${serviceName}`;
-    window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5541xxxxxxxxx?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -292,7 +292,7 @@ const Services = () => {
               <Button
                 variant="luxury"
                 size="lg"
-                onClick={() => window.open('https://wa.me/5541999999999?text=Olá, gostaria de agendar um horário.', '_blank')}
+                onClick={() => window.open('https://wa.me/5541xxxxxxxxx?text=Olá, gostaria de agendar um horário.', '_blank')}
               >
                 Agendar pelo WhatsApp
               </Button>
