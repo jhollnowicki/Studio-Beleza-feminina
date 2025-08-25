@@ -26,7 +26,7 @@ const Navbar = () => {
 
   const handleWhatsApp = () => {
     const message = "Olá, vim pelo site Beleza Feminina e gostaria de agendar um horário.";
-    window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
